@@ -66,9 +66,12 @@ $ mvn spring-boot:run
 2021-07-31 18:56:38.082  INFO 7157 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2021-07-31 18:56:38.091  INFO 7157 --- [           main] com.example.FirstSpringBootApplication   : Started FirstSpringBootApplication in 1.51 seconds (JVM running for 1.791)
 ```
-Se você abrir o browser no endereço [`localhost:8080`](localhost:8080) você deve ver a seguinte saída:
-```html
-Hello World!
+Se você abrir o browser no endereço [`http://localhost:8080/greeting?name=John`](http://localhost:8080/greeting?name=John) você deve ver a seguinte saída:
+```json
+{
+    "id": 14,
+    "content": "Hello, John!"
+}
 ```
 
 ## Referências
