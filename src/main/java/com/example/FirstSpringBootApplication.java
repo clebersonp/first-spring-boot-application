@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,8 +53,14 @@ public class FirstSpringBootApplication {
 		 * Método main é o Entry Point da aplicação e delega a classe
 		 * SpringApplication.run para executar e iniciar a aplicação Spring.
 		 * 
+		 * SpringApplicationBuilder, builder para configurações programaticamento do SpringApplication
+		 * 
 		 */
-		SpringApplication.run(FirstSpringBootApplication.class, args);
+		SpringApplicationBuilder builder = new SpringApplicationBuilder(FirstSpringBootApplication.class);
+		SpringApplication springApplication = builder.lazyInitialization(true).logStartupInfo(true).build();
+//		springApplication.setBannerMode(Banner.Mode.OFF); desabilita o Banner
+		springApplication.run(args);
+//		SpringApplication.run(FirstSpringBootApplication.class, args);
 	}
 
 }
